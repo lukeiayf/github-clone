@@ -26,7 +26,7 @@
         >
           <img :src="i.user.avatarUrl" alt="avatar">
         </v-avatar>
-        <v-card-actions v-for="j in user.repositories" class="justify-center">
+        <v-card-actions v-for="j in user.repositories.edges.node" :key="j.edges.node.id" class="justify-center">
           <h3>{{j.edges.node.name}} <v-icon>Repository name</v-icon></h3>
           <h3>{{j.edges.node.description}} <v-icon>Repository description</v-icon></h3>
         </v-card-actions>
@@ -52,7 +52,7 @@ export default {
       query: GET_REPO_DETAILS,
       variables () {
         return {
-          queryString: this.searchString
+          queryString:'user:' + this.searchString,
         }
       }
     }

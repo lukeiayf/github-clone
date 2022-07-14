@@ -22,6 +22,7 @@
     "shortid": "^2.2.8",
     "vue": "^2.6.14",
     "vue-apollo": "^3.0.0-beta.11",
+    "vue-router": "^4.1.2",
     "vuetify": "^2.6.0"
   },
   "devDependencies": {
