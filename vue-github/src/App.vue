@@ -38,19 +38,16 @@
     </v-app-bar>
 
     <v-main>
-      <ApolloExample></ApolloExample>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import ApolloExample from './components/ApolloExample';
 
 export default {
   name: 'App',
 
   components: {
-    ApolloExample
   },
 
   data: () => ({
