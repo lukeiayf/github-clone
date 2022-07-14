@@ -10,7 +10,7 @@ const AUTH_TOKEN = 'apollo-token'
 
 // Http endpoint
 // const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'http://localhost:4000/graphql'
-const httpEndpoint = 'https://api.graphql.jobs/'
+const httpEndpoint = 'https://api.github.com/graphql'
 // Files URL root
 export const filesRoot = process.env.VUE_APP_FILES_ROOT || httpEndpoint.substr(0, httpEndpoint.indexOf('/graphql'))
 
@@ -42,7 +42,15 @@ const defaultOptions = {
   // cache: myCache
 
   // Override the way the Authorization header is set
-  // getAuth: (tokenName) => ...
+  getAuth: () => {
+    //const token = process.env.VUE_APP_GITHUB_GRAPHQL_AUTH_TOKEN
+    const token = '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'
+    if (token) {
+      return 'Bearer ' + token
+    } else {
+      return ''
+    }
+  } 
 
   // Additional ApolloClient options
   // apollo: { ... }
